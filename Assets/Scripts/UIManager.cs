@@ -97,6 +97,7 @@ public class UIManager : MonoBehaviour
 
     public void PlayDamageAnimation()
     {
+        takeDamageEffectUI.gameObject.SetActive(true);
         StartCoroutine(FadeIn(takeDamageEffectUI.color, fadeTime, fadeAlpha));
         StartCoroutine(FadeOut(takeDamageEffectUI.color, fadeTime, fadeAlpha));
     }
@@ -152,6 +153,8 @@ public class UIManager : MonoBehaviour
             takeDamageEffectUI.color = color;
             yield return null;
         }
+
+        takeDamageEffectUI.gameObject.SetActive(true);
     }
 
     private int currentMagazineAmmo = 0;

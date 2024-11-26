@@ -8,6 +8,7 @@ public class Spawn : MonoBehaviour
     [SerializeField] private Transform RightBottom;
     [SerializeField] private int spawnMeleeZombieAmount;
     [SerializeField] private int spawnRangeZombieAmount;
+    [SerializeField] private int spawnBossZombieAmount;
 
     [SerializeField] private Transform wayPoints;
 
@@ -15,5 +16,6 @@ public class Spawn : MonoBehaviour
     public Transform GetRightBottomTransform() { return RightBottom; }
     public int GetSpawnMeleeZombieAmount() { return spawnMeleeZombieAmount; }
     public int GetSpawnRangeZombieAmount() { return spawnRangeZombieAmount; }
+    public int GetSpawnBossZombieAmount() { return spawnBossZombieAmount; }
     public Transform GetWayPoints() { return wayPoints; }
 }

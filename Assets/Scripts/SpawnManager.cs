@@ -25,11 +25,11 @@ public class SpawnManager : MonoBehaviour
     private void Start()
     {
         Spawning(MainZone);
-        
-        // Spawning(AZone);
-        // Spawning(BZone);
-        // Spawning(CZone);
-        // Spawning(BossZone);
+
+        //Spawning(AZone);
+        //Spawning(BZone);
+        //Spawning(CZone);
+        //Spawning(BossZone);
     }
 
     public void SpawnAZone() { Spawning(AZone); }
@@ -64,6 +64,18 @@ public class SpawnManager : MonoBehaviour
             for (int i = 0; i < zone.GetSpawnRangeZombieAmount(); i++)
             {
                 Zombie zombie = ZombieManager.Instance.GetZombieByID(200);
+                positionX = Random.Range(zone.GetTopLeftTransform().position.x, zone.GetRightBottomTransform().position.x);
+                positionZ = Random.Range(zone.GetTopLeftTransform().position.z, zone.GetRightBottomTransform().position.z);
+                zombie.transform.position = new Vector3(positionX, zombie.transform.position.y, positionZ);
+
+                SetWayPoint(zombie, zone.GetWayPoints());
+
+                //Debug.Log("Spawn zombie at" + zombie.transform.position);
+            }
+
+            for (int i = 0; i < zone.GetSpawnBossZombieAmount(); i++)
+            {
+                Zombie zombie = ZombieManager.Instance.GetZombieByID(300);
                 positionX = Random.Range(zone.GetTopLeftTransform().position.x, zone.GetRightBottomTransform().position.x);
                 positionZ = Random.Range(zone.GetTopLeftTransform().position.z, zone.GetRightBottomTransform().position.z);
                 zombie.transform.position = new Vector3(positionX, zombie.transform.position.y, positionZ);

@@ -87,6 +87,8 @@ public class ZombieManager : MonoBehaviour
 
                 break;
             case 300:           // Boss Zombie
+                zombie = Instantiate(prefabBossZombie);
+
                 break;
             default:
                 Debug.Log("Unvalid ID");
